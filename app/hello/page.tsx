@@ -1,10 +1,15 @@
 //サブページ1　hello world
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Headers } from "../components/header/HeaderProps";
 
 export default function Hello() {
   return (
-    <h1>hello world</h1>
+    <>
+      <Headers />
+      < h1 > hello world</h1 >
+    </>
+
     // <div className={styles.page}>
     //   <main className={styles.main}>
     //     <Image
