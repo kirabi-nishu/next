@@ -5,9 +5,9 @@ import Button from '@mui/material/Button';
 export default function Home() {
   return (
     <div>
-    Hello world
-    <Button variant="contained">ボタン</Button>
-  </div>
+      Hello world
+      <Button variant="contained">ボタン</Button>
+    </div>
 
     // <div className={styles.page}>
     //   <main className={styles.main}>
