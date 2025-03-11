@@ -1,13 +1,17 @@
 //ルートページ
-import Image from "next/image";
-import styles from "./page.module.css";
-import Button from '@mui/material/Button';
+import PersistentDrawerLeft from "./components/Drawer";
+import { Headers } from "./components/Headers";
+
+
 export default function Home() {
   return (
-    <div>
-      Hello world
-      <Button variant="contained">ボタン</Button>
-    </div>
+    <>
+      <Headers />
+      < h1 > hello world</h1 >
+      <PersistentDrawerLeft>
+
+      </PersistentDrawerLeft>
+    </>
 
     // <div className={styles.page}>
     //   <main className={styles.main}>
@@ -51,7 +55,7 @@ export default function Home() {
     //         Read our docs
     //       </a>
     //     </div>
-    //   </main>
+    //   </main >
     //   <footer className={styles.footer}>
     //     <a
     //       href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

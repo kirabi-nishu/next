@@ -1,6 +1,6 @@
 //サブページ2　hello Nishu
-import Image from "next/image";
-import styles from "./page.module.css";
+import PersistentDrawerLeft from "../components/Drawer";
+import { Headers } from "../components/Headers";
 
 // export default function Nishu() {
 //   return (
@@ -26,8 +26,12 @@ type Prop = {
 export default async function Page({ params }: Prop) {
   const id = params.id
   return (
-    <div>
-      <h1>hello {params.id}</h1>
-    </div>
+    <>
+      <Headers />
+      < h1 > hello {params.id}</h1 >
+      <PersistentDrawerLeft>
+
+      </PersistentDrawerLeft>
+    </>
   );
 }
