@@ -83,7 +83,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function PersistentDrawerLeft() {
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);//最初は閉じた状態になっている
+    const [open, setOpen] = React.useState(true);//最初は閉じた状態になっている
 
     const handleDrawerOpen = () => {//開ける
         setOpen(true);
