@@ -1,12 +1,13 @@
 //ルートページ
 import PersistentDrawerLeft from "./components/Drawer";
-import { Headers } from "./components/Headers";
+import HeadersMyApp from "./components/Headers";
+
 
 
 export default function Home() {
   return (
     <>
-      <Headers />
+      <HeadersMyApp />
       < h1 > hello world</h1 >
       <PersistentDrawerLeft>
 

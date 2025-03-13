@@ -15,13 +15,15 @@ import MenuIcon from '@mui/icons-material/Menu';
 //     mr?: number; 
 // };
 
-export const Headers = () => {
+export const headerHeight = '100px';
+
+export default function HeadersMyApp() {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
+            <AppBar position="sticky">
+                <Toolbar variant="dense" disableGutters sx={{ minHeight: headerHeight }}>
                     <IconButton
-                        size="medium"
+                        size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
@@ -30,7 +32,7 @@ export const Headers = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        News
+                        Header
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
