@@ -27,11 +27,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
 }>(({ theme }) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
+    top: '120px',
     transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: `-${drawerWidth}px`,
+
     variants: [
         {
             props: ({ open }) => open,
@@ -39,8 +41,11 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
                 transition: theme.transitions.create('margin', {
                     easing: theme.transitions.easing.easeOut,
                     duration: theme.transitions.duration.enteringScreen,
+
                 }),
                 marginLeft: 0,
+                marginTop: '120px',
+
             },
         },
     ],
@@ -63,6 +68,7 @@ const AppBar = styled(MuiAppBar, {
             style: {
                 width: `calc(100% - ${drawerWidth}px)`,
                 marginLeft: `${drawerWidth}px`,
+
                 transition: theme.transitions.create(['margin', 'width'], {
                     easing: theme.transitions.easing.easeOut,
                     duration: theme.transitions.duration.enteringScreen,
@@ -75,6 +81,7 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
+    top: '120px',
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
@@ -94,36 +101,39 @@ export default function PersistentDrawerLeft() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', mt: 2, }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            {/* <AppBar position="fixed" open={open}>
                 <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}//クリック時に開ける
-                        edge="start"
-                        sx={[
-                            {
-                                mr: 2,
-                            },
-                            open && { display: 'none' },
-                        ]}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Persistent drawer
-                    </Typography>
+                <Typography variant="h6" noWrap component="div" >
+                Persistent drawer
+                </Typography>
                 </Toolbar>
-            </AppBar>
+                </AppBar> */}
+            <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}//クリック時に開ける
+                edge="start"
+                sx={[
+                    {
+
+                        mr: 2
+
+                    },
+                    open && { display: 'none' },
+                ]}
+            >
+                <MenuIcon />
+            </IconButton>
             <Drawer
                 sx={{
                     width: drawerWidth,
+
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
-                        boxSizing: 'border-box',
+                        boxSizing: 'border-box', top: '200px',//ここに記載
                     },
                 }}
                 variant="persistent"

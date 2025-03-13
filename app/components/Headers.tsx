@@ -15,14 +15,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 //     mr?: number; 
 // };
 
-export const headerHeight = '100px';
+export const headerHeight = '200px';
 
 export default function HeadersMyApp() {
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, }}>
             <AppBar position="sticky">
                 <Toolbar variant="dense" disableGutters sx={{ minHeight: headerHeight }}>
-                    <IconButton
+                    {/* <IconButton
                         size="large"
                         edge="start"
                         color="inherit"
@@ -30,11 +30,11 @@ export default function HeadersMyApp() {
 
                     >
                         <MenuIcon />
-                    </IconButton>
+                    </IconButton> */}
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Header
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>
             </AppBar>
         </Box>

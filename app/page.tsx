@@ -1,17 +1,23 @@
-//ルートページ
+"use client"
+import { Box } from "@mui/material";
 import PersistentDrawerLeft from "./components/Drawer";
 import HeadersMyApp from "./components/Headers";
 
 
 
 export default function Home() {
-  return (
+  return ( //Header用のBox作って入れてみる
     <>
-      <HeadersMyApp />
-      < h1 > hello world</h1 >
-      <PersistentDrawerLeft>
+      <Box sx={{ height: '120px' }}>
+        <HeadersMyApp />
+        < h1 > hello world</h1 >
+      </Box>
+      <Box sx={{ mt: '120px' }}>
 
-      </PersistentDrawerLeft>
+        <PersistentDrawerLeft>
+
+        </PersistentDrawerLeft>
+      </Box>
     </>
 
     // <div className={styles.page}>
