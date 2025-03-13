@@ -117,7 +117,9 @@ export default function PersistentDrawerLeft() {
                 edge="start"
                 sx={[
                     {
-                        mr: 2,
+
+                        mr: 2
+
                     },
                     open && { display: 'none' },
                 ]}
