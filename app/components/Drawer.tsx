@@ -123,6 +123,7 @@ export default function PersistentDrawerLeft() {
                     },
                     open && { display: 'none' },
                 ]}
+
             >
                 <MenuIcon />
             </IconButton>
@@ -133,7 +134,8 @@ export default function PersistentDrawerLeft() {
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
-                        boxSizing: 'border-box', top: '200px',//ここに記載
+                        boxSizing: 'border-box',
+                        top: '200px',//ここで位置指定できる
                     },
                 }}
                 variant="persistent"
@@ -147,7 +149,7 @@ export default function PersistentDrawerLeft() {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List>
+                {/* <List>
                     {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
@@ -158,9 +160,9 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     ))}
-                </List>
+                </List> */}
                 <Divider />
-                <List>
+                {/* <List>
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
@@ -171,11 +173,11 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     ))}
-                </List>
+                </List> */}
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                <Typography sx={{ marginBottom: 2 }}>
+                {/* <Typography sx={{ marginBottom: 2 }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
                     enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
@@ -188,8 +190,8 @@ export default function PersistentDrawerLeft() {
                     feugiat vivamus at augue. At augue eget arcu dictum varius duis at
                     consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
                     sapien faucibus et molestie ac.
-                </Typography>
-                <Typography sx={{ marginBottom: 2 }}>
+                </Typography> */}
+                {/* <Typography sx={{ marginBottom: 2 }}>
                     Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
                     eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
                     neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
@@ -201,7 +203,7 @@ export default function PersistentDrawerLeft() {
                     tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
                     eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
                     posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
+                </Typography> */}
             </Main>
         </Box>
     );

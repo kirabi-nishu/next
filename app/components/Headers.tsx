@@ -20,7 +20,7 @@ export const headerHeight = '200px';
 export default function HeadersMyApp() {
     return (
         <Box sx={{ flexGrow: 1, }}>
-            <AppBar position="sticky">
+            <AppBar position="sticky" color="default">
                 <Toolbar variant="dense" disableGutters sx={{ minHeight: headerHeight }}>
                     {/* <IconButton
                         size="large"
@@ -31,9 +31,9 @@ export default function HeadersMyApp() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Header
-                    </Typography>
+                    </Typography> */}
                     {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>
             </AppBar>

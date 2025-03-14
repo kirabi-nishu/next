@@ -1,7 +1,8 @@
 "use client"
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import PersistentDrawerLeft from "./components/Drawer";
 import HeadersMyApp from "./components/Headers";
+import FootersMyApp from "./components/Footer";
 
 
 
@@ -10,13 +11,18 @@ export default function Home() {
     <>
       <Box sx={{ height: '120px' }}>
         <HeadersMyApp />
-        < h1 > hello world</h1 >
+        {/* < h1 > hello world</h1 > */}
+        <FootersMyApp />
       </Box>
+
       <Box sx={{ mt: '120px' }}>
 
         <PersistentDrawerLeft>
 
         </PersistentDrawerLeft>
+      </Box>
+      <Box>
+
       </Box>
     </>
 
