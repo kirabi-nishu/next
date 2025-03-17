@@ -3,6 +3,7 @@ import { Box, Button } from "@mui/material";
 import PersistentDrawerLeft from "./components/Drawer";
 import HeadersMyApp from "./components/Headers";
 import FootersMyApp from "./components/Footer";
+import ButtonsMyApp from "./components/Button";
 
 
 
@@ -12,7 +13,6 @@ export default function Home() {
       <Box sx={{ height: '120px' }}>
         <HeadersMyApp />
         {/* < h1 > hello world</h1 > */}
-        <FootersMyApp />
       </Box>
 
       <Box sx={{ mt: '120px' }}>
@@ -21,7 +21,21 @@ export default function Home() {
 
         </PersistentDrawerLeft>
       </Box>
-      <Box>
+      <Box sx={{
+        top: '1000px'
+        // position: "absolute",
+        // mt: "1000px",   // 上からの距離
+        // left: "200px",
+      }}>
+
+        <FootersMyApp />
+      </Box>
+      <Box sx={{
+        position: "absolute",
+        top: "400px",   // 上からの距離
+        left: "200px",
+      }}>
+        <ButtonsMyApp />
 
       </Box>
     </>

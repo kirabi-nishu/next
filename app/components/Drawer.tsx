@@ -118,7 +118,10 @@ export default function PersistentDrawerLeft() {
                 sx={[
                     {
 
-                        mr: 2
+                        // mr: 2
+                        position: "absolute",
+                        top: "250px",   // 上からの距離
+                        left: "30px", // 右からの距離
 
                     },
                     open && { display: 'none' },
