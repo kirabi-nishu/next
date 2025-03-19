@@ -1,6 +1,7 @@
 //サブページ2　hello Nishu
 import PersistentDrawerLeft from "../components/Drawer";
-import { Headers } from "../components/Headers";
+import HeadersMyApp from "../components/Headers";
+
 
 // export default function Nishu() {
 //   return (
@@ -27,7 +28,7 @@ export default async function Page({ params }: Prop) {
   const id = params.id
   return (
     <>
-      <Headers />
+      <HeadersMyApp />
       < h1 > hello {params.id}</h1 >
       <PersistentDrawerLeft>
 

@@ -1,12 +1,10 @@
 //サブページ1　hello world
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Headers } from "../components/Headers";
 
 export default function Hello() {
   return (
     <>
-      <Headers />
       < h1 > hello world</h1 >
     </>
 
