@@ -5,6 +5,7 @@ import PersistentDrawerLeft from "./components/Drawer";
 import HeadersMyApp from "./components/Headers";
 import FootersMyApp from "./components/Footer";
 import ButtonsMyApp from "./components/Button";
+import BodyMyApp from "./components/Button";
 
 
 
@@ -38,22 +39,16 @@ export default function Home() {
         <FootersMyApp />
       </Box>
       {/* <Grid item xs={12} sm={6} md={4}> */}
-      <Box sx={{
+      {/* <Box sx={{
         position: "absolute",
         top: "400px",   // 上からの距離
         left: "200px",
       }}>
-      </Box >
+      </Box > */}
 
       <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          minHeight: '100vh',
-        }}
       >
-        <ButtonsMyApp />
+        <BodyMyApp />
       </Box>
       {/* </Grid>
       </Grid > */}

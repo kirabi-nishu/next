@@ -1,15 +1,36 @@
-import Button from '@mui/material/Button';
 
-export const footerHeight = '200px';
+//export const footerHeight = '200px';
+//<TextareaAutosize />
 
-export default function ButtonsMyApp() {
+import { Box, Button, TextareaAutosize, TextField } from "@mui/material";
+
+export default function BodyMyApp() {
     return (
-        <Button variant="text">Text</Button>
-        // <Box sx={{ flexGrow: 1, }}>
-        //     <AppBar component="footer" position="static" color="default">
-        //         <Toolbar variant="dense" disableGutters sx={{ minHeight: footerHeight }}>
-        //         </Toolbar>
-        //     </AppBar>
-        // </Box>
+        <Box
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: '100%',
+                justifyContent: "center",
+                margin: "0 auto"
+            }}>
+            <>
+                <TextField
+                    sx={{
+                        width: 240,
+                        margin: "0 auto"
+                    }}
+                    placeholder="スタッフ名"
+                />
+                <Button
+                    variant="text"
+                    sx={{
+                        width: 120,
+                        margin: "16px auto"
+                    }}>
+                    Text
+                </Button>
+            </>
+        </Box >
     );
 };
