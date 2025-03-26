@@ -20,8 +20,9 @@ export const footerHeight = '200px';
 export default function FootersMyApp() {
     return (
         <Box sx={{ flexGrow: 1, }}>
-            <AppBar component="footer" position="static" color="default">
-                <Toolbar variant="dense" disableGutters sx={{ minHeight: footerHeight }}>
+            <AppBar component="footer" position="static" >
+                <Toolbar variant="dense" disableGutters sx={{ minHeight: footerHeight, margin: "16px auto" }} >
+                    text
                 </Toolbar>
             </AppBar>
         </Box>

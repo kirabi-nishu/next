@@ -6,6 +6,7 @@ import { Box, Button, TextareaAutosize, TextField } from "@mui/material";
 
 export default function BodyMyApp() {
     return (
+
         <Box
             sx={{
                 display: "flex",
@@ -23,12 +24,13 @@ export default function BodyMyApp() {
                     placeholder="スタッフ名"
                 />
                 <Button
-                    variant="text"
+                    variant="contained"
+                    color="warning"
                     sx={{
                         width: 120,
                         margin: "16px auto"
                     }}>
-                    Text
+                    Submit
                 </Button>
             </>
         </Box >

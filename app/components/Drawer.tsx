@@ -51,32 +51,32 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     ],
 }));
 
-interface AppBarProps extends MuiAppBarProps {
-    open?: boolean;
-}
+// interface AppBarProps extends MuiAppBarProps {
+//     open?: boolean;
+// }
 
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme }) => ({
-    transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-    }),
-    variants: [
-        {
-            props: ({ open }) => open,
-            style: {
-                width: `calc(100% - ${drawerWidth}px)`,
-                marginLeft: `${drawerWidth}px`,
+// const AppBar = styled(MuiAppBar, {
+//     shouldForwardProp: (prop) => prop !== 'open',
+// })<AppBarProps>(({ theme }) => ({
+//     transition: theme.transitions.create(['margin', 'width'], {
+//         easing: theme.transitions.easing.sharp,
+//         duration: theme.transitions.duration.leavingScreen,
+//     }),
+//     variants: [
+//         {
+//             props: ({ open }) => open,
+//             style: {
+//                 width: `calc(100% - ${drawerWidth}px)`,
+//                 marginLeft: `${drawerWidth}px`,
 
-                transition: theme.transitions.create(['margin', 'width'], {
-                    easing: theme.transitions.easing.easeOut,
-                    duration: theme.transitions.duration.enteringScreen,
-                }),
-            },
-        },
-    ],
-}));
+//                 transition: theme.transitions.create(['margin', 'width'], {
+//                     easing: theme.transitions.easing.easeOut,
+//                     duration: theme.transitions.duration.enteringScreen,
+//                 }),
+//             },
+//         },
+//     ],
+// }));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -86,6 +86,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+
 }));
 
 export default function PersistentDrawerLeft() {
@@ -101,7 +102,8 @@ export default function PersistentDrawerLeft() {
     };
 
     return (
-        <Box sx={{ display: 'flex', mt: 2, }}>
+        <Box sx={{ display: 'flex', mt: 2, }}
+        >
             <CssBaseline />
             {/* <AppBar position="fixed" open={open}>
                 <Toolbar>
@@ -133,29 +135,36 @@ export default function PersistentDrawerLeft() {
             <Drawer
                 sx={{
                     width: drawerWidth,
-
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
                         top: '200px',//ここで位置指定できる
                     },
+                    backgroundColor: "#004d40",//追加
                 }}
                 variant="persistent"
                 anchor="left"
                 open={open}
+
             >
-                <DrawerHeader>
+                <DrawerHeader
+                    sx={{
+                        backgroundColor: "#81c784",//追加
+                    }}>
                     <IconButton onClick={handleDrawerClose}//クリック時に閉じる
                     >
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                {/* <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
+                <List>
+                    {['Nav1', 'Nav2', 'Nav3', 'Nav4'].map((text, index) => (
+                        <ListItem key={text} disablePadding >
+                            <ListItemButton
+                                sx={{
+                                    backgroundColor: "#e0f2f1",//追加
+                                }}>
                                 <ListItemIcon>
                                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                                 </ListItemIcon>
@@ -163,7 +172,7 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     ))}
-                </List> */}
+                </List>
                 <Divider />
                 {/* <List>
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (

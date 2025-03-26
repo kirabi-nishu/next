@@ -1,13 +1,11 @@
 "use client"
-import { Box, Button } from "@mui/material";
+import { Box, Button, createTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import PersistentDrawerLeft from "./components/Drawer";
 import HeadersMyApp from "./components/Headers";
 import FootersMyApp from "./components/Footer";
 import ButtonsMyApp from "./components/Button";
 import BodyMyApp from "./components/Button";
-
-
 
 export default function Home() {
   return ( //Header用のBox作って入れてみる
@@ -19,12 +17,10 @@ export default function Home() {
         {/* < h1 > hello world</h1 > */}
       </Box>
 
-      <Box sx={{ mt: '120px' }}>
-
+      <Box>
         <PersistentDrawerLeft>
-
         </PersistentDrawerLeft>
-      </Box>
+      </Box >
 
       <Box sx={{
         position: "absolute",
@@ -47,6 +43,7 @@ export default function Home() {
       </Box > */}
 
       <Box
+      //sx={{ position: "absolute", bottom: 0, left: 0, }}
       >
         <BodyMyApp />
       </Box>
