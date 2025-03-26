@@ -93,13 +93,11 @@ export default function PersistentDrawerLeft() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(true);//最初は閉じた状態になっている
 
-    const handleDrawerOpen = () => {//開ける
-        setOpen(true);
+    const handleDrawer = () => {//開ける
+        setOpen(!open);
     };
 
-    const handleDrawerClose = () => {//閉じる
-        setOpen(false);
-    };
+
 
     return (
         <Box sx={{ display: 'flex', mt: 2, }}
@@ -115,7 +113,7 @@ export default function PersistentDrawerLeft() {
             <IconButton
                 color="inherit"
                 aria-label="open drawer"
-                onClick={handleDrawerOpen}//クリック時に開ける
+                onClick={handleDrawer}//クリック時に開ける
                 edge="start"
                 sx={[
                     {
@@ -152,7 +150,7 @@ export default function PersistentDrawerLeft() {
                     sx={{
                         backgroundColor: "#81c784",//追加
                     }}>
-                    <IconButton onClick={handleDrawerClose}//クリック時に閉じる
+                    <IconButton onClick={handleDrawer}//クリック時に閉じる
                     >
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
