@@ -51,32 +51,32 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     ],
 }));
 
-interface AppBarProps extends MuiAppBarProps {
-    open?: boolean;
-}
+// interface AppBarProps extends MuiAppBarProps {
+//     open?: boolean;
+// }
 
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme }) => ({
-    transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-    }),
-    variants: [
-        {
-            props: ({ open }) => open,
-            style: {
-                width: `calc(100% - ${drawerWidth}px)`,
-                marginLeft: `${drawerWidth}px`,
+// const AppBar = styled(MuiAppBar, {
+//     shouldForwardProp: (prop) => prop !== 'open',
+// })<AppBarProps>(({ theme }) => ({
+//     transition: theme.transitions.create(['margin', 'width'], {
+//         easing: theme.transitions.easing.sharp,
+//         duration: theme.transitions.duration.leavingScreen,
+//     }),
+//     variants: [
+//         {
+//             props: ({ open }) => open,
+//             style: {
+//                 width: `calc(100% - ${drawerWidth}px)`,
+//                 marginLeft: `${drawerWidth}px`,
 
-                transition: theme.transitions.create(['margin', 'width'], {
-                    easing: theme.transitions.easing.easeOut,
-                    duration: theme.transitions.duration.enteringScreen,
-                }),
-            },
-        },
-    ],
-}));
+//                 transition: theme.transitions.create(['margin', 'width'], {
+//                     easing: theme.transitions.easing.easeOut,
+//                     duration: theme.transitions.duration.enteringScreen,
+//                 }),
+//             },
+//         },
+//     ],
+// }));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -86,22 +86,22 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+
 }));
 
 export default function PersistentDrawerLeft() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(true);//最初は閉じた状態になっている
 
-    const handleDrawerOpen = () => {//開ける
-        setOpen(true);
+    const handleDrawer = () => {//開ける
+        setOpen(!open);
     };
 
-    const handleDrawerClose = () => {//閉じる
-        setOpen(false);
-    };
+
 
     return (
-        <Box sx={{ display: 'flex', mt: 2, }}>
+        <Box sx={{ display: 'flex', mt: 2, }}
+        >
             <CssBaseline />
             {/* <AppBar position="fixed" open={open}>
                 <Toolbar>
@@ -113,44 +113,56 @@ export default function PersistentDrawerLeft() {
             <IconButton
                 color="inherit"
                 aria-label="open drawer"
-                onClick={handleDrawerOpen}//クリック時に開ける
+                onClick={handleDrawer}//クリック時に開ける
                 edge="start"
                 sx={[
                     {
 
-                        mr: 2
+                        // mr: 2
+                        position: "absolute",
+                        top: "250px",   // 上からの距離
+                        left: "30px", // 右からの距離
 
                     },
                     open && { display: 'none' },
                 ]}
+
             >
                 <MenuIcon />
             </IconButton>
             <Drawer
                 sx={{
                     width: drawerWidth,
-
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
-                        boxSizing: 'border-box', top: '200px',//ここに記載
+                        boxSizing: 'border-box',
+                        top: '200px',//ここで位置指定できる
                     },
+                    backgroundColor: "#004d40",//追加
                 }}
                 variant="persistent"
                 anchor="left"
                 open={open}
+
             >
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}//クリック時に閉じる
+                <DrawerHeader
+                    sx={{
+                        backgroundColor: "#81c784",//追加
+                    }}>
+                    <IconButton onClick={handleDrawer}//クリック時に閉じる
                     >
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
+                    {['Nav1', 'Nav2', 'Nav3', 'Nav4'].map((text, index) => (
+                        <ListItem key={text} disablePadding >
+                            <ListItemButton
+                                sx={{
+                                    backgroundColor: "#e0f2f1",//追加
+                                }}>
                                 <ListItemIcon>
                                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                                 </ListItemIcon>
@@ -160,7 +172,7 @@ export default function PersistentDrawerLeft() {
                     ))}
                 </List>
                 <Divider />
-                <List>
+                {/* <List>
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
@@ -171,11 +183,11 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     ))}
-                </List>
+                </List> */}
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                <Typography sx={{ marginBottom: 2 }}>
+                {/* <Typography sx={{ marginBottom: 2 }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
                     enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
@@ -188,8 +200,8 @@ export default function PersistentDrawerLeft() {
                     feugiat vivamus at augue. At augue eget arcu dictum varius duis at
                     consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
                     sapien faucibus et molestie ac.
-                </Typography>
-                <Typography sx={{ marginBottom: 2 }}>
+                </Typography> */}
+                {/* <Typography sx={{ marginBottom: 2 }}>
                     Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
                     eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
                     neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
@@ -201,7 +213,7 @@ export default function PersistentDrawerLeft() {
                     tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
                     eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
                     posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
+                </Typography> */}
             </Main>
         </Box>
     );

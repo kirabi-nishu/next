@@ -20,8 +20,8 @@ export const headerHeight = '200px';
 export default function HeadersMyApp() {
     return (
         <Box sx={{ flexGrow: 1, }}>
-            <AppBar position="sticky">
-                <Toolbar variant="dense" disableGutters sx={{ minHeight: headerHeight }}>
+            <AppBar position="sticky" color="secondary">
+                <Toolbar variant="dense" disableGutters sx={{ minHeight: headerHeight, margin: "16px auto" }}>
                     {/* <IconButton
                         size="large"
                         edge="start"

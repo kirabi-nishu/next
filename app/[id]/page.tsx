@@ -1,6 +1,9 @@
 //サブページ2　hello Nishu
+import { Box } from "@mui/material";
 import PersistentDrawerLeft from "../components/Drawer";
-import { Headers } from "../components/Headers";
+import HeadersMyApp from "../components/Headers";
+import FootersMyApp from "../components/Footer";
+
 
 // export default function Nishu() {
 //   return (
@@ -27,11 +30,29 @@ export default async function Page({ params }: Prop) {
   const id = params.id
   return (
     <>
-      <Headers />
-      < h1 > hello {params.id}</h1 >
-      <PersistentDrawerLeft>
+      {/* <HeadersMyApp /> */}
+      <Box sx={{
+        width: '100%',
+        textAlign: "center"
+
+      }}>
+        < h1 > hello {params.id}</h1 >
+      </Box>
+      {/* <PersistentDrawerLeft>
 
       </PersistentDrawerLeft>
+      <Box sx={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        // top: '1000px'
+        // position: "absolute",
+        // mt: "1000px",   // 上からの距離
+        // left: "200px",
+      }}>
+        <FootersMyApp />
+      </Box> */}
     </>
   );
 }
