@@ -22,7 +22,7 @@ export default function FootersMyApp() {
         <Box sx={{ flexGrow: 1, }}>
             <AppBar component="footer" position="static" >
                 <Toolbar variant="dense" disableGutters sx={{ minHeight: footerHeight, margin: "16px auto" }} >
-                    text
+                    footer
                 </Toolbar>
             </AppBar>
         </Box>
